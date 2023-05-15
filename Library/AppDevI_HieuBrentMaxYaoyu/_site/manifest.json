@@ -1,0 +1,225 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/maxen/Documents/GitHub/AppDevI_HieuBrentMaxYaoyu/AppDevI_HieuBrentMaxYaoyu",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "Yx3OHRLTfw01ZeodLxjg4vqp1lO/7Y+6ycy/o0yohOE="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Budget.BudgetItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Budget.BudgetItem.html",
+          "hash": "hhd+YAJM6wDtzG3snGZiUytPmYL+LMPdv2vRJm8/tzQ="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Budget.BudgetItemsByCategory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Budget.BudgetItemsByCategory.html",
+          "hash": "MSPX/i9wVDrlRy8FVx5ftg6tLdAUPcUCr3fjwvUl4QM="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Budget.BudgetItemsByMonth.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Budget.BudgetItemsByMonth.html",
+          "hash": "Mtsf54yuH5DVbfufFJdnJHWG7ZZbdM+lRIbCEqsVmX0="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Budget.Categories.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Budget.Categories.html",
+          "hash": "BNA/q0B3hjfIziCAvrsU4OoT6bojIJEPXXf+B6gV7ms="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Budget.Category.CategoryType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Budget.Category.CategoryType.html",
+          "hash": "mf5xnK2zEMJDjz+rF+bHBptNauS0qmQNPaHauLT5wrU="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Budget.Category.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Budget.Category.html",
+          "hash": "8nF5utwgpwuA+WsPJC7Xm9XJgeehxp/LP7YAm0wpu8U="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Budget.Database.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Budget.Database.html",
+          "hash": "8i+bMXU7QLdYioPivjPz4HrDIT/XT4agvtNRAQSkg0k="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Budget.Expense.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Budget.Expense.html",
+          "hash": "c9KidVIVwGpyHTlklhJbOUlJCnOfRJqJGoJoHoiAF8A="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Budget.Expenses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Budget.Expenses.html",
+          "hash": "rIkS7kcW3c8xA2YsRq72R9++BFaqn/lAdqclVl0q4jU="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Budget.HomeBudget.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Budget.HomeBudget.html",
+          "hash": "0KES2WXm7v86Lf08Sdo1dVZqrsMP7VRDJyX8hcCREP0="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Budget.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Budget.html",
+          "hash": "naWjTK+/d0BOpU2bC2Gsy55hOAg+4ZKzR88puF/hgjM="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "obj/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "BhbG027kPs+FpN5TeRDseVrLyT59vrRQcF4BJLLzGPc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "jtfvrvuUkoz1jGV83McSDe5G7g9kXhbRG+nHG8z3lcA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 1,
+          "skipped_file_count": 1
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 11,
+          "skipped_file_count": 11
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

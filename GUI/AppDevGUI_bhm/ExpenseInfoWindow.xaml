@@ -1,0 +1,83 @@
+﻿<Window x:Class="AppDevGUI_bhm.ExpenseInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppDevGUI_bhm"
+        mc:Ignorable="d"
+        Title="Expense Info" 
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Height="400" Width="430"
+        Closing="Window_Closing">
+    <Grid Margin="25 5 25 15">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <!-- Temporary Message -->
+        <TextBlock x:Name="txtBlock_msg" Grid.ColumnSpan="2" Visibility="Hidden" HorizontalAlignment="Center" 
+                   Foreground="#005FE4" Style="{StaticResource style_txtBlock_label}" FontWeight="Bold" FontSize="12"/>
+
+        <!-- Title -->
+        <TextBlock Grid.ColumnSpan="2" Grid.Row="1" Text="Expense Info" Style="{StaticResource style_txtBlock_heading}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <!-- Description -->
+        <TextBlock Grid.Row="3" Text="Description:" Style="{StaticResource style_txtBlock_label}" VerticalAlignment="Center"/>
+        <StackPanel Grid.Row="3" Grid.Column="1">
+            <ScrollViewer x:Name="txtBlock_desc_container" Height="25" VerticalScrollBarVisibility="Hidden">
+                <TextBlock x:Name="txtBlock_desc" Style="{StaticResource style_txtBlock_label}" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            </ScrollViewer>
+            <TextBox x:Name="txtBox_desc" Height="24" TextWrapping="Wrap" VerticalContentAlignment="Center" GotFocus="txtBox_desc_GotFocus"/>
+        </StackPanel>
+
+        <!-- Amount -->
+        <TextBlock Grid.Row="5" Text="Amount:" Style="{StaticResource style_txtBlock_label}" VerticalAlignment="Center"/>
+        <StackPanel Grid.Row="5" Grid.Column="1">
+            <TextBlock x:Name="txtBlock_amt" Height="25" Style="{StaticResource style_txtBlock_label}" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtBox_amt" Height="24" Text="$0.00" VerticalContentAlignment="Center" 
+                     PreviewTextInput="txtBox_amt_PreviewTextInput"
+                     PreviewKeyDown="txtBox_amt_PreviewKeyDown"
+                     TextChanged="txtBox_amt_TextChanged"/>
+        </StackPanel>
+
+
+        <!-- Category -->
+        <TextBlock Grid.Row="7" Text="Category:" Style="{StaticResource style_txtBlock_label}" VerticalAlignment="Center"/>
+        <StackPanel Grid.Row="7" Grid.Column="1">
+            <TextBlock x:Name="txtBlock_cat" Height="25" Style="{StaticResource style_txtBlock_label}" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            <ComboBox x:Name="cmbBox_cat" Height="24" VerticalContentAlignment="Center" IsEditable="True"/>
+        </StackPanel>
+
+        <!-- Date -->
+        <TextBlock Grid.Row="9" Text="Date:" Style="{StaticResource style_txtBlock_label}" VerticalAlignment="Center"/>
+        <StackPanel Grid.Row="9" Grid.Column="1">
+            <TextBlock x:Name="txtBlock_date" Height="25" Style="{StaticResource style_txtBlock_label}" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            <DatePicker x:Name="datePicker_date" Height="24" VerticalContentAlignment="Center" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center" Height="30">
+            <Button x:Name="btn_save" Content="Save" Style="{StaticResource style_btn_normal}" Width="0" Click="btn_save_Click"/>
+            <Button x:Name="btn_close" Content="Close" Style="{StaticResource style_btn_normal}" Width="100" Click="btn_close_Click"/>
+        </StackPanel>
+
+        <Button x:Name="btn_changeMode" Content="Edit Mode" Grid.Row="13" Grid.ColumnSpan="3" Style="{StaticResource style_btn_normal}" Width="100" HorizontalAlignment="Center" FontSize="10" Click="btn_changeMode_Click" Height="20" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

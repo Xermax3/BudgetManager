@@ -1,0 +1,395 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AppDevI_HieuBrentMaxYaoyu</name>
+    </assembly>
+    <members>
+        <member name="T:Budget.BudgetItem">
+            <summary>
+            Represents a <see cref="T:Budget.BudgetItem"/> with the information about the <see cref="T:Budget.Category"/> and the <see cref="T:Budget.Expense"/>.
+            </summary>
+        </member>
+        <member name="M:Budget.BudgetItem.#ctor">
+            <summary>
+            Initializes a new instance of <see cref="T:Budget.BudgetItem"/> class.
+            </summary>
+        </member>
+        <member name="P:Budget.BudgetItem.CategoryId">
+            <summary>
+            The <see cref="T:Budget.Category"/> id.
+            </summary>
+        </member>
+        <member name="P:Budget.BudgetItem.ExpenseId">
+            <summary>
+            The <see cref="T:Budget.Expense"/> id.
+            </summary>
+        </member>
+        <member name="P:Budget.BudgetItem.Date">
+            <summary>
+            The date of the <see cref="T:Budget.Expense"/>.
+            </summary>
+        </member>
+        <member name="P:Budget.BudgetItem.CategoryDescription">
+            <summary>
+            The description of the <see cref="T:Budget.Category"/>.
+            </summary>
+        </member>
+        <member name="P:Budget.BudgetItem.ExpenseDescription">
+            <summary>
+            The description of the <see cref="T:Budget.Expense"/>.
+            </summary>
+        </member>
+        <member name="P:Budget.BudgetItem.Amount">
+            <summary>
+            The amount of the <see cref="T:Budget.Expense"/>.
+            </summary>
+        </member>
+        <member name="P:Budget.BudgetItem.Balance">
+            <summary>
+            The current balance upon this <see cref="T:Budget.Expense"/> (also after all the previous ones).
+            </summary>
+        </member>
+        <member name="T:Budget.BudgetItemsByMonth">
+            <summary>
+            Represents a list of <see cref="T:Budget.BudgetItem"/> in the same current <see cref="P:Budget.BudgetItemsByMonth.Month"/>.
+            </summary>
+        </member>
+        <member name="P:Budget.BudgetItemsByMonth.Month">
+            <summary>
+            The month of the <see cref="T:Budget.BudgetItem"/>.
+            </summary>
+        </member>
+        <member name="P:Budget.BudgetItemsByMonth.Details">
+            <summary>
+            The list of all <see cref="T:Budget.BudgetItem"/> in the same current <see cref="P:Budget.BudgetItemsByMonth.Month"/>.
+            </summary>
+        </member>
+        <member name="P:Budget.BudgetItemsByMonth.Total">
+            <summary>
+            The total of all <see cref="P:Budget.Expense.Amount"/> in the current <see cref="P:Budget.BudgetItemsByMonth.Month"/>.
+            </summary>
+        </member>
+        <member name="T:Budget.BudgetItemsByCategory">
+            <summary>
+            Represents a list of <see cref="T:Budget.BudgetItem"/> with the same <see cref="T:Budget.Category"/>.
+            </summary>
+        </member>
+        <member name="P:Budget.BudgetItemsByCategory.CategoryDescription">
+            <summary>
+            The category description of the <see cref="T:Budget.BudgetItem"/>.
+            </summary>
+        </member>
+        <member name="P:Budget.BudgetItemsByCategory.Details">
+            <summary>
+            The list of all <see cref="T:Budget.BudgetItem"/> with the same <see cref="T:Budget.Category"/>.
+            </summary>
+        </member>
+        <member name="P:Budget.BudgetItemsByCategory.Total">
+            <summary>
+            The total of all <see cref="P:Budget.Expense.Amount"/> with the same <see cref="T:Budget.Category"/>.
+            </summary>
+        </member>
+        <member name="T:Budget.Categories">
+            <summary>
+            Represents a list of <see cref="T:Budget.Category"/> items.
+            </summary>
+        </member>
+        <member name="M:Budget.Categories.#ctor(System.Data.SQLite.SQLiteConnection,System.Boolean,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Budget.Categories"/> class.
+            </summary>
+            <param name="connection">The database connection.</param>
+            <param name="isNewDB">Indicates whether the database is newly created or not.</param>
+            <param name="defaultCats">Indicates whether to create default categories or not.</param>
+        </member>
+        <member name="M:Budget.Categories.SetToDefault">
+            <summary>
+            Creates tables for <see cref="T:Budget.Categories"/> and <see cref="T:Budget.Category.CategoryType"/> in the database, then inserts default data for each.
+            </summary>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:Budget.Categories.GetCategoryById(System.Int32)">
+            <summary>
+            Returns the <see cref="T:Budget.Category"/> in the database with the given id.
+            </summary>
+            <param name="id">The id to find.</param>
+            <returns>The <see cref="T:Budget.Category"/> with the given id.</returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:Budget.Categories.GetCategoriesByType(System.Int32)">
+            <summary>
+            Returns a <see cref="T:System.Collections.Generic.List`1"/> of <see cref="T:Budget.Category"/> of the same <see cref="T:Budget.Category.CategoryType"/> in the database.
+            </summary>
+            <param name="typeId">The id of the target type.</param>
+            <returns>The <see cref="T:System.Collections.Generic.List`1"/> of <see cref="T:Budget.Category"/> of the same <see cref="T:Budget.Category.CategoryType"/>.</returns>
+        </member>
+        <member name="M:Budget.Categories.Add(System.String,Budget.Category.CategoryType)">
+            <summary>
+            Adds a <see cref="T:Budget.Category"/> to the database with the given information.
+            </summary>
+            <param name="description">The description of the <see cref="T:Budget.Category"/>.</param>
+            <param name="type">The type of the <see cref="T:Budget.Category"/>.</param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:Budget.Categories.Update(System.Int32,System.String,Budget.Category.CategoryType)">
+            <summary>
+            Updates a <see cref="T:Budget.Category"/> in the database with the given information.
+            </summary>
+            <param name="id">The id of the <see cref="T:Budget.Category"/> to be updated.</param>
+            <param name="description">The new category description.</param>
+            <param name="type">The new category type.</param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:Budget.Categories.Delete(System.Int32)">
+            <summary>
+            Removes a <see cref="T:Budget.Category"/> from the database with the given id.
+            </summary>
+            <param name="id">The id of the <see cref="T:Budget.Category"/> to be deleted.</param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:Budget.Categories.GetList">
+            <summary>
+            Returns a <see cref="T:System.Collections.Generic.List`1"/> of all the <see cref="T:Budget.Category"/> items currently stored in the database.
+            </summary>
+            <returns>A <see cref="T:System.Collections.Generic.List`1"/> of all the <see cref="T:Budget.Category"/> items.</returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="T:Budget.Category">
+            <summary>
+            Represents a <see cref="T:Budget.Category"/> item.
+            </summary>
+        </member>
+        <member name="T:Budget.Category.CategoryType">
+            <summary>
+            Describes the type of the <see cref="T:Budget.Category"/>.
+            </summary>
+        </member>
+        <member name="M:Budget.Category.#ctor(System.Int32,System.String,Budget.Category.CategoryType)">
+            <summary>
+            Initializes a new instance of <see cref="T:Budget.Category"/> class with the given information.
+            </summary>
+            <param name="id">The id of the <see cref="T:Budget.Category"/>.</param>
+            <param name="description">The description of the <see cref="T:Budget.Category"/>.</param>
+            <param name="type">The type of the <see cref="T:Budget.Category"/>.</param>
+        </member>
+        <member name="P:Budget.Category.Id">
+            <summary>
+            Returns the id of the <see cref="T:Budget.Category"/>.
+            </summary>
+        </member>
+        <member name="P:Budget.Category.Description">
+            <summary>
+            The description of the <see cref="T:Budget.Category"/>.
+            </summary>
+        </member>
+        <member name="P:Budget.Category.Type">
+            <summary>
+            The type of the <see cref="T:Budget.Category"/>.
+            </summary>
+        </member>
+        <member name="M:Budget.Category.ToString">
+            <summary>
+            Returns the <see cref="T:System.String"/> representation of the <see cref="T:Budget.Category"/>.
+            </summary>
+            <returns>The <see cref="T:System.String"/> representation of the <see cref="T:Budget.Category"/>.</returns>
+        </member>
+        <member name="T:Budget.Database">
+            <summary>
+            Represents the <see cref="T:Budget.Database"/>, providing the connection between the database and the models.
+            </summary>
+        </member>
+        <member name="M:Budget.Database.CreateNewDatabase(System.String)">
+            <summary>
+            Creates a new database and opens a <see cref="T:System.Data.SQLite.SQLiteConnection"/> to it. The given file is created if it does not exist.
+            </summary>
+            <param name="databaseFile">The database file to store the new data.</param>
+            <returns>The <see cref="T:System.Data.SQLite.SQLiteConnection"/> to the database file.</returns>
+            <exception cref="T:System.IO.IOException">If the file is not given.</exception>
+        </member>
+        <member name="M:Budget.Database.OpenExistingDatabase(System.String)">
+            <summary>
+            Opens a <see cref="T:System.Data.SQLite.SQLiteConnection"/> to the given database file.
+            </summary>
+            <param name="databaseFile">The path to the database file.</param>
+            <returns>The <see cref="T:System.Data.SQLite.SQLiteConnection"/> to the database file.</returns>
+            <exception cref="T:System.IO.IOException">If the file is not given or does not exist.</exception>
+        </member>
+        <member name="M:Budget.Database.CloseConnection">
+            <summary>
+            Closes the current <see cref="T:System.Data.SQLite.SQLiteConnection"/>, then waits for all processes using it to end.
+            </summary>
+        </member>
+        <member name="T:Budget.Expense">
+            <summary>
+            Represents an <see cref="T:Budget.Expense"/> item.
+            </summary>
+        </member>
+        <member name="M:Budget.Expense.#ctor(System.Int32,System.DateTime,System.Int32,System.Double,System.String)">
+            <summary>
+            Initializes an instance of <see cref="T:Budget.Expense"/> class with the given information.
+            </summary>
+            <param name="id">The id of the expense</param>
+            <param name="date">The date of the expense</param>
+            <param name="categoryId">The category of the expense</param>
+            <param name="amount">The amount of the expense</param>
+            <param name="description">The description of the expense</param>
+        </member>
+        <member name="M:Budget.Expense.#ctor(Budget.Expense)">
+            <summary>
+            Initializes an instance of <see cref="T:Budget.Expense"/> class with the information of another <see cref="T:Budget.Expense"/> instance.
+            </summary>
+            <param name="obj">The existing <see cref="T:Budget.Expense"/> instance.</param>
+        </member>
+        <member name="P:Budget.Expense.Id">
+            <summary>
+            Returns the id of the <see cref="T:Budget.Expense"/>.
+            </summary>
+        </member>
+        <member name="P:Budget.Expense.Date">
+            <summary>
+            The date of the <see cref="T:Budget.Expense"/>.
+            </summary>
+        </member>
+        <member name="P:Budget.Expense.CategoryId">
+            <summary>
+            The <see cref="T:Budget.Category"/> id of the <see cref="T:Budget.Expense"/>.
+            </summary>
+        </member>
+        <member name="P:Budget.Expense.Amount">
+            <summary>
+            The amount of the <see cref="T:Budget.Expense"/>.
+            </summary>
+        </member>
+        <member name="P:Budget.Expense.Description">
+            <summary>
+            The description of the <see cref="T:Budget.Expense"/>.
+            </summary>
+        </member>
+        <member name="T:Budget.Expenses">
+            <summary>
+            Represents a collection of <see cref="T:Budget.Expense"/> items.
+            </summary>
+        </member>
+        <member name="M:Budget.Expenses.#ctor(System.Data.SQLite.SQLiteConnection,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Budget.Expenses"/> class.
+            </summary>
+            <param name="connection">The database connection.</param>
+            <param name="isNewDB">Indicates whether the database is newly created or not.</param>
+        </member>
+        <member name="M:Budget.Expenses.Add(System.DateTime,System.Int32,System.Double,System.String)">
+            <summary>
+            Adds an <see cref="T:Budget.Expense"/> to the database with the given information.
+            </summary>
+            <param name="date">The date of the <see cref="T:Budget.Expense"/></param>
+            <param name="categoryId">The category of the <see cref="T:Budget.Expense"/></param>
+            <param name="amount">The amount of the <see cref="T:Budget.Expense"/></param>
+            <param name="description">The description of the <see cref="T:Budget.Expense"/></param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:Budget.Expenses.Update(System.Int32,System.DateTime,System.Int32,System.Double,System.String)">
+            <summary>
+            Updates an <see cref="T:Budget.Expense"/> in the database with the given information.
+            </summary>
+            <param name="id">The id of the <see cref="T:Budget.Expense"/> to be updated</param>
+            <param name="date">The date of the <see cref="T:Budget.Expense"/></param>
+            <param name="categoryId">The category of the <see cref="T:Budget.Expense"/></param>
+            <param name="amount">The amount of the <see cref="T:Budget.Expense"/></param>
+            <param name="description">The description of the <see cref="T:Budget.Expense"/></param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:Budget.Expenses.Delete(System.Int32)">
+            <summary>
+            Removes an <see cref="T:Budget.Expense"/> from the database with the given id.
+            </summary>
+            <param name="id">The id of the <see cref="T:Budget.Expense"/> to be deleted.</param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:Budget.Expenses.GetExpenseById(System.Int32)">
+            <summary>
+            Returns the <see cref="T:Budget.Expense"/> in the database with the given id.
+            </summary>
+            <param name="id">The id to find.</param>
+            <returns>The <see cref="T:Budget.Expense"/> with the given id.</returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:Budget.Expenses.GetList">
+            <summary>
+            Retrieves a <see cref="T:System.Collections.Generic.List`1"/> of all the <see cref="T:Budget.Expense"/> items currently stored in the database.
+            </summary>
+            <returns>A <see cref="T:System.Collections.Generic.List`1"/> of all the <see cref="T:Budget.Expense"/> items.</returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="T:Budget.HomeBudget">
+            <summary>
+            Represents the <see cref="T:Budget.HomeBudget"/>, including a list of <see cref="T:Budget.Categories"/> and a list of <see cref="T:Budget.Expenses"/>.
+            </summary>
+        </member>
+        <member name="M:Budget.HomeBudget.#ctor(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Initializes a new instance of <see cref="T:Budget.HomeBudget"/> class with a given database file.
+            </summary>
+            <param name="databaseFile">The database file.</param>
+            <param name="isNewDB">Indicates whether to create a new database (with default data) or to open an existing database.</param>
+            <param name="defaultCats">Indicates whether to create default categories or not.</param>
+        </member>
+        <member name="M:Budget.HomeBudget.Disconnect">
+            <summary>
+            Disconnect <see cref="T:Budget.HomeBudget"/> with the database.
+            </summary>
+        </member>
+        <member name="P:Budget.HomeBudget.Categories">
+            <summary>
+            Returns the list of <see cref="T:Budget.Categories"/>.
+            </summary>
+        </member>
+        <member name="P:Budget.HomeBudget.Expenses">
+            <summary>
+            Returns the list of <see cref="T:Budget.Expenses"/>.
+            </summary>
+        </member>
+        <member name="M:Budget.HomeBudget.GetBudgetItems(System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Boolean,System.Int32)">
+            <summary>
+            Returns a <see cref="T:System.Collections.Generic.List`1"/> of <see cref="T:Budget.BudgetItem"/> within a time period.
+            </summary>
+            <param name="start">Starting date.</param>
+            <param name="end">Ending date.</param>
+            <param name="filterFlag">Indicates whether unwanted categories are filtered out.</param>
+            <param name="targetCategoryId">The id of the wanted category.</param>
+            <returns>The <see cref="T:System.Collections.Generic.List`1"/> of <see cref="T:Budget.BudgetItem"/>.</returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:Budget.HomeBudget.GetBudgetItemsByMonth(System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Boolean,System.Int32)">
+            <summary>
+            Returns a <see cref="T:System.Collections.Generic.List`1"/> of <see cref="T:Budget.BudgetItemsByMonth"/> (budget items grouped by month) within a time period.
+            </summary>
+            <param name="start">Starting date.</param>
+            <param name="end">Ending date.</param>
+            <param name="filterFlag">Indicates whether unwanted categories are filtered out.</param>
+            <param name="targetCategoryId">The id of the wanted category.</param>
+            <returns>The <see cref="T:System.Collections.Generic.List`1"/> of <see cref="T:Budget.BudgetItemsByMonth"/>.</returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:Budget.HomeBudget.GetBudgetItemsByCategory(System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Boolean,System.Int32)">
+            <summary>
+            Returns a <see cref="T:System.Collections.Generic.List`1"/> of <see cref="T:Budget.BudgetItemsByCategory"/> (budget items grouped by category) within a time period.
+            </summary>
+            <param name="start">Starting date.</param>
+            <param name="end">Ending date.</param>
+            <param name="filterFlag">Indicates whether unwanted categories are filtered out.</param>
+            <param name="targetCategoryId">The id of the wanted category.</param>
+            <returns>The <see cref="T:System.Collections.Generic.List`1"/> of <see cref="T:Budget.BudgetItemsByCategory"/>.</returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:Budget.HomeBudget.GetBudgetDictionaryByCategoryAndMonth(System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Boolean,System.Int32)">
+            <summary>
+            Gets a list of budget items grouped by month and category.
+            </summary>
+            <param name="Start">Starting date</param>
+            <param name="End">Ending date</param>
+            <param name="FilterFlag">If filter is on, unwanted categories are ignored</param>
+            <param name="CategoryID">ID of the wanted category</param>
+            <returns> The list of expenses grouped by month and category. </returns>
+        </member>
+    </members>
+</doc>
